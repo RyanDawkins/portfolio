@@ -7,7 +7,7 @@ class ContactController < ApplicationController
         if person_params
             render json: Person.create(data)
         else
-            render json: data
+            render json: message("We have an error happening")
         end
     end
 
