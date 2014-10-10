@@ -5,9 +5,9 @@ class ContactController < ApplicationController
     def new
         data = person_params
         if person_params
-            render json: Person.create(data)
+            respond_with Person.create(data)
         else
-            render json: data
+            respond_with data
         end
     end
 
