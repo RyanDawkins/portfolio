@@ -5,9 +5,9 @@ class ContactController < ApplicationController
     def new
         data = person_params
         if person_params
-            respond_with Person.create(data)
+            render json: Person.create(data)
         else
-            respond_with data
+            render json: message("We have an error happening")
         end
     end
 
