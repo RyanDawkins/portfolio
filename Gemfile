@@ -27,6 +27,8 @@ gem 'font-awesome-sass', '~> 4.2.0'
 gem 'mysql2'
 gem 'pg', '~>0.13.2'
 
+gem 'rails_12factor', group: :production
+
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
