@@ -7,6 +7,16 @@ class PostTest < ActiveSupport::TestCase
         assert_not post.save
     end
 
+    test "fails with no title" do
+        post = get_post_without_attr :title
+        assert_not post.save
+    end
+
+    test "fails with no content" do
+        post = get_post_without_attr :content
+        assert_not post.save
+    end
+
     def get_post_without_attr attr
 
         post = Post.new
