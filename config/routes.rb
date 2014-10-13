@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+
+  # Post rest
+  post 'post/:id/create' => 'post#create'
+  post 'post/:id/update' => 'post#update'
+  get 'post/:id/destroy' => 'post#destroy'
+  get 'post/:id' => "post#show"
+
   post 'contact/create' => 'contact#new'
   get 'contact/create' => 'contact#new'
 

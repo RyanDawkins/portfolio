@@ -20,11 +20,4 @@ class ContactController < ApplicationController
         end
     end
 
-    def error message
-        {
-            message: message,
-            params: params
-        }
-    end
-
 end
