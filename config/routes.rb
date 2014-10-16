@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   get 'post/:id/destroy' => 'post#destroy'
   get 'post/:id' => "post#show"
 
-  post 'contact/create' => 'contact#new'
-  get 'contact/create' => 'contact#new'
+  post 'contact/create' => 'contact#create'
+  get 'contact/create' => 'contact#create'
 
   get 'site/index'
 
