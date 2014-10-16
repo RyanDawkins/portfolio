@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
-  post 'contact/create' => 'contact#new'
-  get 'contact/create' => 'contact#new'
+
+  # Post rest
+  post 'post/:id/create' => 'post#create'
+  post 'post/:id/update' => 'post#update'
+  get 'post/:id/destroy' => 'post#destroy'
+  get 'post/:id' => "post#show"
+
+  post 'contact/create' => 'contact#create'
+  get 'contact/create' => 'contact#create'
 
   get 'site/index'
 

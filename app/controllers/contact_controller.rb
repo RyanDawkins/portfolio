@@ -2,7 +2,7 @@ class ContactController < ApplicationController
 
     respond_to :json
 
-    def new
+    def create
         data = person_params
         if person_params
             render json: Person.create(data)
@@ -18,13 +18,6 @@ class ContactController < ApplicationController
         rescue
             return nil
         end
-    end
-
-    def error message
-        {
-            message: message,
-            params: params
-        }
     end
 
 end
