@@ -12,7 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require angular
 //= require turbolinks
 //= require_tree .
 //= require bootstrap
 //= require bootstrap-sprockets
+
+var app = angular.module('app', []);
