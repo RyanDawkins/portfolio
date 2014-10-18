@@ -11,7 +11,7 @@ $(document).on('click', '.nav-link', function(e){
     $(this).addClass('active');
 });
 
-$(document).on('click', 'a', function(e){
+$(document).on('click', 'a.scroll', function(e){
 
     // Fixes flickering
     e.preventDefault();

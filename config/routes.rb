@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'blog/index'
+
   # Post rest
   post 'post/:id/create' => 'post#create'
   post 'post/:id/update' => 'post#update'
@@ -11,7 +13,7 @@ Rails.application.routes.draw do
 
   get 'site/index'
 
-  get 'blog' => 'site#blog'
+  get 'blog' => 'blog#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
