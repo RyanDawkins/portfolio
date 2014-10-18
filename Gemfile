@@ -24,6 +24,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'font-awesome-sass', '~> 4.2.0'
+gem 'font-awesome-rails'
 gem 'angularjs-rails'
 gem 'mysql2'
 gem 'pg', '~>0.13.2'
