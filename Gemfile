@@ -27,6 +27,7 @@ gem 'font-awesome-sass', '~> 4.2.0'
 gem 'font-awesome-rails'
 gem 'angularjs-rails'
 gem 'mysql2'
+gem 'sqlite3'
 gem 'pg', '~>0.13.2'
 
 gem 'rails_12factor', group: :production
