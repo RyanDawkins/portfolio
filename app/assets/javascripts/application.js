@@ -14,8 +14,23 @@
 //= require jquery_ujs
 //= require angular
 //= require turbolinks
-//= require_tree .
 //= require bootstrap
 //= require bootstrap-sprockets
+//= require lib/angular-route.js
+//= require_self
+//= require_tree .
 
-var app = angular.module('app', []);
+var app = angular.module('PortfolioApp', ['ngRoute']);
+
+app.config(['$routeProvider', '$locationProvider',
+  function($routeProvider, $locationProvider) {
+    $routeProvider
+        .when('/', {
+          templateUrl: 'partials/index.html',
+          controller: 'IndexController'
+        })
+        .when('/blog', {
+          templateUrl: 'partials/blog.html',
+          controller: 'BlogController'
+        });
+  }]);

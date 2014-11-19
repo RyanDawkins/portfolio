@@ -1,23 +1,11 @@
-class ContactController < ApplicationController
-
-    respond_to :json
-
-    def create
-        data = person_params
-        if person_params
-            render json: Person.create(data)
-        else
-            render json: message("We have an error happening")
-        end
-    end
+class ContactController < RestController
 
     private
-    def person_params
-        begin
-            return params.permit(:first_name, :last_name, :email, :phone)
-        rescue
-            return nil
-        end
+    def get_class
+        Person
     end
 
+    def from_params
+        params.permit(:first_name, :last_name, :email, :phone)
+    end
 end

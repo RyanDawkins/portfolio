@@ -5,10 +5,4 @@ class SiteControllerTest < ActionController::TestCase
     get :index
     assert_response :success
   end
-
-  test "should get blog" do
-    get :blog
-    assert_response :success
-  end
-
 end
