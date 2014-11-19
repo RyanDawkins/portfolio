@@ -11,8 +11,8 @@ class PostControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get destroy" do
-    get :destroy, :id => 1, :format => :json
+  test "should get delete" do
+    get :delete, :id => 1, :format => :json
     assert_response :success
   end
 
