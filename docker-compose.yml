@@ -1,0 +1,7 @@
+web:
+  build: .
+  command: bundle exec rails s -p 3000 -b '127.0.0.1'
+  volumes:
+    - .:/myapp
+  ports:
+    - "3000:3000"
