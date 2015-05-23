@@ -6,3 +6,4 @@ ADD Gemfile /myapp/Gemfile
 RUN bundle install
 ADD . /myapp
 RUN rm /myapp/tmp/pids/server.pid
+EXPOSE 3000
