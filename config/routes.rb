@@ -3,11 +3,17 @@ Rails.application.routes.draw do
   get 'blog/index'
 
   # Post rest
-  post 'post/:id/create' => 'post#create'
+  post 'post/create' => 'post#create'
   post 'post/:id/update' => 'post#update'
   get 'post/:id/delete' => 'post#delete'
   get 'post/:id' => 'post#show'
   get 'post/' => 'post#index'
+
+  post 'user/create' => 'user#create'
+  get 'user/login' => 'user#login'
+  get 'user/:id/delete' => 'user#delete'
+  get 'user/:id' => 'user#show'
+  get 'user/' => 'user#index'
 
   post 'contact/create' => 'contact#create'
 
