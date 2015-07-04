@@ -6,8 +6,13 @@ class UserController < RestController
   end
 
   def login
-    a = User.create_token 'hello'
-    render json: a
+    if User.authenticate params[:email], params[:password]
+      render json: User.create_token(params[:email])
+    else
+      render json: {
+                 message: "Wrong info"
+             }
+    end
   end
 
   def from_params
