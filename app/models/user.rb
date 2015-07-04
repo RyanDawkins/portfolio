@@ -33,14 +33,14 @@ class User < ActiveRecord::Base
     false
   end
 
-  def self.create_token email
+  def self.create_token email, ip
 
-    session = Session.find_by_email(email)
+    session = Session.where("email = ? AND ip = ?", email, ip).take
     if session
       session.expiration_date = Time.now + 1.week
     else
       token = Digest::MD5.hexdigest(email+Date.today().to_s)
-      session = Session.new(email: email, token: token, expiration_date: Time.now+1.week)
+      session = Session.new(email: email, token: token, expiration_date: Time.now+1.week, ip: ip)
     end
     session.save()
     session

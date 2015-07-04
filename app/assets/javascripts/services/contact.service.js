@@ -13,7 +13,10 @@
 
         function create(contactForm) {
 
-            return $http.post('/contact/create', contactForm)
+            return $http.post({
+                url: '/contact/create',
+                data: contactForm
+                })
                 .success(function(data, status, headers, config){
                     console.log(data);
                 })

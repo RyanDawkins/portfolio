@@ -1,10 +1,10 @@
 (function(){
 
-    angular.module('PortfolioApp').controller('BlogController', BlogController);
+    angular.module('PortfolioApp').controller('AdminBlogController', AdminBlogController);
 
-    BlogController.$inject = ['$scope', 'PostService'];
+    AdminBlogController.$inject = ['$scope', 'PostService', 'AuthService'];
 
-    function BlogController($scope, PostService) {
+    function AdminBlogController($scope, PostService) {
 
         var vm = this;
 

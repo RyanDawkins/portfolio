@@ -2,9 +2,9 @@
 
     angular.module('PortfolioApp').factory('PostService', PostService);
 
-    PostService.$inject = ['$http'];
+    PostService.$inject = ['$http', 'AuthService'];
 
-    function PostService($http) {
+    function PostService($http, AuthService) {
 
         return {
             create: create,
@@ -15,7 +15,14 @@
         };
 
         function create(post) {
-            return $http.post('/post/create', post)
+            return $http({
+                url: '/post/create',
+                method: 'POST',
+                data: post,
+                headers: {
+                    'Auth-Token': AuthService.getSession()
+                }
+            })
                 .success(function(data, status, headers, config){
                     console.debug(data);
                 })
@@ -39,7 +46,13 @@
         }
 
         function destroy(id) {
-            return $http.get('/post/'+id+'/delete')
+            return $http({
+                url: '/post/'+id+'/delete',
+                method: 'GET',
+                headers: {
+                    'Auth-Token': AuthService.getSession()
+                }
+                })
                 .success(function(data, status, headers, config){
                     console.debug(data);
                 })

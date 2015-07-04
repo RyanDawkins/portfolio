@@ -55,6 +55,12 @@ class RestController < ApplicationController
     end
   end
 
+  def authenticate
+    if not Session.validate_token(request.headers[:"Auth-Token"])
+      not_found
+    end
+  end
+
   def relations
     []
   end

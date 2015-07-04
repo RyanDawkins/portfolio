@@ -13,7 +13,14 @@
             getSession: getSession
         };
 
-        function login() {
+        function login(email, password) {
+            return $http.get('/user/login?email='+encodeURIComponent(email)+'&password='+encodeURIComponent(password)
+            ).success(function(data){
+                console.debug(data);
+                setSession(data.token);
+            }).error(function(data){
+                console.error(data);
+            });
         }
 
         function logout() {
@@ -21,7 +28,11 @@
         }
 
         function isLoggedIn() {
+            return !!getSession();
+        }
 
+        function setSession(token) {
+            localStorage.setItem('STORAGE_KEY', token);
         }
 
         function getSession() {
@@ -30,4 +41,4 @@
 
     }
 
-});
+})();

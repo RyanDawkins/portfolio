@@ -1,10 +1,10 @@
 (function(){
 
-    angular.module('PortfolioApp').controller('PostController', PostController);
+    angular.module('PortfolioApp').controller('PostAdminController', PostAdminController);
 
-    PostController.$inject = ['$scope', '$routeParams', '$window', 'PostService'];
+    PostAdminController.$inject = ['$scope', '$routeParams', '$window', 'PostService'];
 
-    function PostController($scope, $routeParams, $window, PostService) {
+    function PostAdminController($scope, $routeParams, $window, PostService) {
 
         var vm = this;
 
@@ -28,7 +28,10 @@
             PostService.create(vm.post)
                 .success(function(data){
                     $window.location.href = '/#/admin/post/'+data.id+"/update";
-                });
+                })
+                .error(function(data){
+                    console.error(data);
+                })
         }
 
         function save(post) {

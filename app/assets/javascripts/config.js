@@ -10,17 +10,22 @@
                 })
                 .when('/admin/blog', {
                     templateUrl: 'partials/blog.html',
-                    controller: 'BlogController',
+                    controller: 'AdminBlogController',
                     controllerAs: 'vm'
                 })
                 .when('/admin/post/create', {
                     templateUrl: 'partials/post.html',
-                    controller: 'PostController',
+                    controller: 'PostAdminController',
                     controllerAs: 'vm'
                 })
                 .when('/admin/post/:id/update', {
                     templateUrl: 'partials/post.html',
-                    controller: 'PostController',
+                    controller: 'PostAdminController',
+                    controllerAs: 'vm'
+                })
+                .when('/login', {
+                    templateUrl: 'partials/login.html',
+                    controller: 'LoginController',
                     controllerAs: 'vm'
                 });
         }]);
