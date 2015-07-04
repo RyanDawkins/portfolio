@@ -34,8 +34,14 @@ class User < ActiveRecord::Base
   end
 
   def self.create_token email
-    token = Digest::MD5.hexdigest(email+Date.today().to_s)
-    session = Session.new(email: email, token: token, expiration_date: Time.now+1.week)
+
+    session = Session.find_by_email(email)
+    if session
+      session.expiration_date = Time.now + 1.week
+    else
+      token = Digest::MD5.hexdigest(email+Date.today().to_s)
+      session = Session.new(email: email, token: token, expiration_date: Time.now+1.week)
+    end
     session.save()
     session
   end
