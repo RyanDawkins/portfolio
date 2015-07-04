@@ -17,19 +17,12 @@
 //= require bootstrap-sprockets
 //= require lib/angular-route.js
 //= require_self
-//= require_tree .
+//= require config.js
+//= require_tree ./services
+//= require_tree ./directives
+//= require_tree ./controllers
 
-var app = angular.module('PortfolioApp', ['ngRoute']);
 
-app.config(['$routeProvider', '$locationProvider',
-  function($routeProvider, $locationProvider) {
-    $routeProvider
-        .when('/', {
-          templateUrl: 'partials/index.html',
-          controller: 'IndexController'
-        })
-        .when('/blog', {
-          templateUrl: 'partials/blog.html',
-          controller: 'BlogController'
-        });
-  }]);
+(function(){
+    angular.module('PortfolioApp', ['ngRoute']);
+})();
