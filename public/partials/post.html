@@ -1,0 +1,17 @@
+<form>
+
+    <input ng-model="vm.post.title" class="form-control" placeholder="Blog Title" />
+
+    <textarea ng-model="vm.post.content" class="form-control" rows="6" placeholder="Type some blog text here..."></textarea>
+
+    <button ng-click="vm.create()" ng-if="vm.isCreateMode" class="btn btn-success">
+        <i class="fa fa-plus"></i> Create
+    </button>
+    <button ng-click="vm.save()" ng-if="!vm.isCreateMode" class="btn btn-primary">
+        <i class="fa fa-save"></i> Save
+    </button>
+    <button ng-click="vm.destroy()" ng-if="!vm.isCreateMode" class="btn btn-danger">
+        <i class="fa fa-trash"> Delete</i>
+    </button>
+    <a href="/#/admin/blog" class="btn btn-default">Back</a>
+</form>

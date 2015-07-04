@@ -18,17 +18,19 @@ p{
     font-size: 16px;
 }
 
-@media(min-width:769){
+@media(min-width: 769px){
     .full-page{
         margin-top: 0px;
-        min-height: 800px;
+        //min-height: 800px;
     }
     #avatar{
-        margin-top: 40px;
+        margin-top: 0px;
         border: white solid thick;
+        height: 50%;
+        width: 25%;
     }
 }
-@media(max-width: 768) {
+@media(max-width: 768px) {
     .full-page{
         margin-top: 700px;
     }

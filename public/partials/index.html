@@ -6,9 +6,9 @@
     <h3 class="text-center"><em>Software Engineer</em></h3>
 
     <div id="quick-links" class="center-div">
-        <a ng-click="scroll('about')" class="btn btn-info"><i class="fa fa-coffee"></i> Learn More</a>
-        <a ng-click="scroll('contact')" class="btn btn-success"><i class="fa fa-envelope-o"></i> Contact</a>
-        <a href="#" class="btn btn-primary"><i class="fa fa-suitcase"></i> Blog (coming soon)</a>
+        <a ng-click="vm.scroll('about')" class="btn btn-info"><i class="fa fa-coffee"></i> Learn More</a>
+        <a ng-click="vm.scroll('contact')" class="btn btn-success"><i class="fa fa-envelope-o"></i> Contact</a>
+        <a ng-href="/#/blog" class="btn btn-primary"><i class="fa fa-suitcase"></i> Blog (coming soon)</a>
     </div>
 </div>
 
@@ -23,7 +23,7 @@
                     I'm Ryan Dawkins! I'm a Software Developer living in OKC, Oklahoma.
                     I am a Software Developer Intern at <a class="pretty-link" href="//devonenergy.com">Devon Energy</a>
                 </p>
-                <p class="">
+                <p>
                     I'm currently a student at <a class="pretty-link" href="//okstate.edu">Oklahoma State University</a>
                     studying computer science. As a student at OSU I am the active President at
                     the local ACM chapter at OSU, and I am also an organizer at the OSU GDG.
@@ -60,21 +60,21 @@
                     <form id="contact-form" role="form">
                         <div class="form-group">
                             <label for="input-first-name">First Name</label>
-                            <input ng-model="contactForm.first_name" type="text" class="form-control" id="input-first-name" placeholder="John" required>
+                            <input ng-model="vm.contactForm.first_name" type="text" class="form-control" id="input-first-name" placeholder="John" required>
                         </div>
                         <div class="form-group">
                             <label for="input-first-name">Last Name</label>
-                            <input ng-model="contactForm.last_name" type="text" class="form-control" id="input-last-name" placeholder="Doe" required>
+                            <input ng-model="vm.contactForm.last_name" type="text" class="form-control" id="input-last-name" placeholder="Doe" required>
                         </div>
                         <div class="form-group">
                             <label for="input-email">Email</label>
-                            <input ng-model="contactForm.email" type="email" class="form-control" id="input-email" placeholder="john.doe@example.com" required>
+                            <input ng-model="vm.contactForm.email" type="email" class="form-control" id="input-email" placeholder="john.doe@example.com" required>
                         </div>
                         <div class="form-group">
                             <label for="input-phone">Phone Number (optional)</label>
-                            <input ng-model="contactForm.phone" type="tel" class="form-control" id="input-phone">
+                            <input ng-model="vm.contactForm.phone" type="tel" class="form-control" id="input-phone">
                         </div>
-                        <button id="submit-contact" ng-click="submitContact()" type="submit" class="btn btn-info"><i class="fa fa-envelope-o"></i> Submit</button>
+                        <button id="submit-contact" ng-click="vm.submitContact()" type="submit" class="btn btn-info"><i class="fa fa-envelope-o"></i> Submit</button>
                     </form>
                 </div>
             </div>

@@ -1,1 +1,25 @@
-<h1>Thank you for being this curious! But my blog is not ready yet :(</h1>
+<a href="/#/admin/post/create" class="btn btn-success"><i class="fa fa-plus"></i> Create</a>
+
+<table class="table table-bordered table-responsive">
+
+    <thead>
+        <tr>
+            <td></td>
+            <td>Date Created</td>
+            <td>Date Updated</td>
+            <td>Title</td>
+            <td>Content</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr ng-repeat="post in vm.posts">
+            <td><a href="/#/admin/post/{{post.id}}/update" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></a></td>
+            <td>{{post.created_at}}</td>
+            <td>{{post.updated_at}}</td>
+            <td>{{post.title}}</td>
+            <td>{{vm.shorten(post.content)}}</td>
+        </tr>
+    </tbody>
+
+</table>
