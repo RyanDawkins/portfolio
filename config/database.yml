@@ -9,15 +9,14 @@ default: &default
   pool: 5
   timeout: 5000
 
-development: &default
-  adapter: postgresql
-  encoding: unicode
-  database: postgres
+development:
+  adapter: mysql2
+  encoding: utf8
+  database: portfolio
   pool: 5
-  username: postgres
-  password:
-  host: 192.168.99.100
-  port: 32768
+  username: root
+  password: root
+  socket: /tmp/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
