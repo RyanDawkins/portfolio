@@ -1,6 +1,6 @@
 <div>
     <div class="panel-group" id="accordion">
-        <div ng-repeat="post in vm.posts" class="panel panel-default">
+        <div ng-repeat="post in vm.posts | orderBy: 'created_at':true" class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
                     <a href="javascript:;" data-toggle="collapse" data-parent="#accordion" data-target="#collapse{{$index}}">
