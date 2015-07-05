@@ -1,6 +1,8 @@
 
 class UserController < RestController
 
+  before_filter :authenticate, :only => [:create, :delete, :update]
+
   def get_class
     User
   end
