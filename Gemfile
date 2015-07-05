@@ -27,7 +27,7 @@ gem 'angularjs-rails'
 gem 'mysql2'
 gem 'pg', '~>0.13.2'
 gem 'bcrypt'
-gem 'sqlite3', '1.3.10'
+gem 'sqlite3', '1.3.10', group: test
 
 gem 'rails_12factor', group: :production
 
