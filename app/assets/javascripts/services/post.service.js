@@ -32,7 +32,20 @@
         }
 
         function save(post){
-            console.debug(post);
+            return $http({
+                url: '/post/'+post.id+'/update',
+                method: 'POST',
+                data: post,
+                headers: {
+                    'Auth-Token': AuthService.getSession()
+                }
+            })
+                .success(function(data, status, headers, config){
+                    console.debug(data);
+                })
+                .error(function(data, status, headers, config){
+                    console.error(data);
+                });
         }
 
         function find(id) {

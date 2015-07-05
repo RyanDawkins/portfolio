@@ -8,8 +8,12 @@
 
         var vm = this;
 
-        vm.post = {};
+        vm.post = {
+            title: "",
+            content: ""
+        };
         vm.isCreateMode = !$routeParams['id'];
+        vm.previewOn = true;
 
         vm.create = create;
         vm.save = save;
@@ -34,8 +38,8 @@
                 })
         }
 
-        function save(post) {
-            PostService.save(post);
+        function save() {
+            PostService.save(vm.post);
         }
 
         function find(id) {

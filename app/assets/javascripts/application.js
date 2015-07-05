@@ -16,6 +16,8 @@
 //= require bootstrap
 //= require bootstrap-sprockets
 //= require lib/angular-route.js
+//= require lib/marked.js
+//= require lib/angular-marked.js
 //= require_self
 //= require config.js
 //= require_tree ./services
@@ -24,5 +26,5 @@
 
 
 (function(){
-    angular.module('PortfolioApp', ['ngRoute']);
+    angular.module('PortfolioApp', ['ngRoute', 'hc.marked']);
 })();

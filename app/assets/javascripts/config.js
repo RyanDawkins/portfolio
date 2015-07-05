@@ -8,18 +8,23 @@
                     controller: 'IndexController',
                     controllerAs: 'vm'
                 })
-                .when('/admin/blog', {
+                .when('/blog', {
                     templateUrl: 'partials/blog.html',
+                    controller: 'BlogController',
+                    controllerAs: 'vm'
+                })
+                .when('/admin/blog', {
+                    templateUrl: 'partials/admin/blog.html',
                     controller: 'AdminBlogController',
                     controllerAs: 'vm'
                 })
                 .when('/admin/post/create', {
-                    templateUrl: 'partials/post.html',
+                    templateUrl: 'partials/admin/post.html',
                     controller: 'PostAdminController',
                     controllerAs: 'vm'
                 })
                 .when('/admin/post/:id/update', {
-                    templateUrl: 'partials/post.html',
+                    templateUrl: 'partials/admin/post.html',
                     controller: 'PostAdminController',
                     controllerAs: 'vm'
                 })
