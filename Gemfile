@@ -28,6 +28,7 @@ gem 'mysql2'
 gem 'sqlite3'
 gem 'pg', '~>0.13.2'
 gem 'bcrypt'
+gem 'sqlite3'
 
 gem 'rails_12factor', group: :production
 
