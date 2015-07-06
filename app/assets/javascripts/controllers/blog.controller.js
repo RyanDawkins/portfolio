@@ -9,7 +9,7 @@
 
         vm.posts = [];
 
-        vm.toMarkdown = toMarkdown;
+        vm.formatDate = formatDate;
 
         initialize();
 
@@ -20,10 +20,9 @@
                 });
         }
 
-        function toMarkdown(str) {
-            console.debug(str);
-            console.debug(marked(str));
-            return marked(str);
+        function formatDate(date_str) {
+            var date = new Date(date_str);
+            return date.toDateString();
         }
 
     }
