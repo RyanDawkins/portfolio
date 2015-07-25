@@ -32,7 +32,10 @@
                     templateUrl: 'partials/login.html',
                     controller: 'LoginController',
                     controllerAs: 'vm'
+                })
+                .when('/logout', {
+                    controller: 'LogoutController',
+                    templateUrl: 'partials/login.html'
                 });
         }]);
-
 })();

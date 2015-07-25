@@ -2,9 +2,9 @@
 
     angular.module('PortfolioApp').controller('LoginController', LoginController);
 
-    LoginController.$inject = ['$scope', 'AuthService'];
+    LoginController.$inject = ['$scope', '$location', 'AuthService'];
 
-    function LoginController($scope, AuthService) {
+    function LoginController($scope, $location, AuthService) {
 
         var vm = this;
 
@@ -20,6 +20,7 @@
             var password = vm.loginForm.password;
             AuthService.login(email, password)
                 .success(function(data){
+                    $location.path('/admin/blog').replace();
                 })
                 .error(function(data){
                 });

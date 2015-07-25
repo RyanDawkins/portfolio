@@ -4,7 +4,7 @@
 
     AdminBlogController.$inject = ['$scope', 'PostService', 'AuthService'];
 
-    function AdminBlogController($scope, PostService) {
+    function AdminBlogController($scope, PostService, AuthService) {
 
         var vm = this;
 
