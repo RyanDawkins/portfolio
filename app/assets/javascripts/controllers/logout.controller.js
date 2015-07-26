@@ -9,8 +9,7 @@
 
     function LogoutController($location, AuthService) {
         AuthService.logout();
-        $location.path('/logout');
-        $location.replace();
+        $location.path('/login');
     }
 
 })();

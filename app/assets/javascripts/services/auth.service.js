@@ -24,7 +24,7 @@
         }
 
         function logout() {
-
+            localStorage.removeItem('STORAGE_KEY');
         }
 
         function isLoggedIn() {

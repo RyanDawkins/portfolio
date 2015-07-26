@@ -5,12 +5,19 @@
 
     angular.module('PortfolioApp').run(RunBlock);
 
-    RunBlock.$inject = ['$location', 'AuthService'];
+    RunBlock.$inject = ['$rootScope', '$location', 'AuthService'];
 
-    function RunBlock($location, AuthService) {
-        // Write redirect code.
-        if(/\/admin\/*/.test($location.path()) && !AuthService.isLoggedIn()) {
-            $location.path('/login');
+    function RunBlock($rootScope, $location, AuthService) {
+
+        $rootScope.$on('$routeChangeStart', function(next, current) {
+            filter();
+        });
+
+        function filter() {
+            // Write redirect code.
+            if(/\/admin\/*/.test($location.path()) && !AuthService.isLoggedIn()) {
+                $location.path('/login').replace();
+            }
         }
 
     }
